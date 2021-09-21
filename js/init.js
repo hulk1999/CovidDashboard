@@ -58,5 +58,21 @@ window.onload = function(e){
   });
 
 
+  // =============== FOREIGN DROPDOWN ===============
+
+  const foreign_selected = document.querySelector(".foreign-selected");
+  const foreign_optionsContainer = document.querySelector(".foreign-options-container");
+  const foreign_optionsList = document.querySelectorAll(".foreign-option");
+
+  foreign_selected.addEventListener("click", () => {
+    foreign_optionsContainer.classList.toggle("active");
+  });
+
+  foreign_optionsList.forEach( o => {
+    o.addEventListener("click", () => {
+      foreign_selected.innerHTML = o.querySelector("label").innerHTML;
+      foreign_optionsContainer.classList.remove("active");
+    })
+  })
 
 }

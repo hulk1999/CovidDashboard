@@ -1,10 +1,10 @@
 // ============= CASES =================
 // https://api.highcharts.com/highcharts/chart
 
-const chInfos = [
-  {container: 'cases-chart-main-container', data: casesData, fontSize: 11, crosshairWidth: 1.5, maxPointWidth: 20},
-  {container: 'cases-chart-world-container', data: casesDataWorld, fontSize: 7, crosshairWidth: 1, maxPointWidth: 10},
-  {container: 'cases-chart-foreign-container', data: casesDataUsa, fontSize: 7, crosshairWidth: 1, maxPointWidth: 10},
+let chInfos = [
+  {container: 'cases-chart-main-container', data: casesData, fontSize: 11, crosshairWidth: 1.5, maxPointWidth: 20, tickAmount: undefined},
+  {container: 'cases-chart-world-container', data: casesDataWorld, fontSize: 7, crosshairWidth: 1, maxPointWidth: 10, tickAmount: 2},
+  {container: 'cases-chart-foreign-container', data: casesDataUsa, fontSize: 7, crosshairWidth: 1, maxPointWidth: 10, tickAmount: 2},
 ];
 
 const casesCharts = [null, null, null];
@@ -76,6 +76,7 @@ casesCharts[i] = Highcharts.chart(chInfos[i].container, {
       }
     },
     gridLineColor: 'rgb(70, 70, 70)',
+    tickAmount: chInfos[i].tickAmount
   },
   legend: {enabled: false},
   credits: {enabled: false},
@@ -101,4 +102,13 @@ casesCharts[i] = Highcharts.chart(chInfos[i].container, {
 
 });
 
+}
+
+// ------------------------------------------------------------------------------------------------
+
+function updateCountry(country){
+  if (country == 'usa') chInfos[2].data = casesDataUsa;
+  if (country == 'china') chInfos[2].data = casesDataChina;
+  if (country == 'india') chInfos[2].data = casesDataIndia;
+  handleSliderInput(document.getElementById('slider-left'), true, false);
 }

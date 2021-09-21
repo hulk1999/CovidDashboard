@@ -12,7 +12,7 @@ Highcharts.mapChart('map-chart-container', {
     joinBy: ['iso_3166_2', 'iso3166_2'],
     states: {
       hover: {
-        borderColor: 'red',
+        // borderColor: 'red',
         // brightness: -.5,
         // color: 'rgba(219, 26, 26, 0.3)'
       },
@@ -48,7 +48,7 @@ Highcharts.mapChart('map-chart-container', {
   credits: {enabled: false},
   
   tooltip: {
-    backgroundColor: 'rgb(50, 59, 75)',
+    backgroundColor: 'rgb(235, 87, 87)',
     borderRadius: 10,
     borderWidth: 0,
     shadow: false,

@@ -325,6 +325,7 @@ html, body{
   padding: 0px;
   margin-bottom: 10px;
   position: relative;
+  position: relative;
 }
 .title-line{
   width: 2px;
@@ -339,6 +340,7 @@ html, body{
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
+  padding-left: 4px;
 }
 #cases-chart-main-container{
   width: 100%;
@@ -357,6 +359,80 @@ html, body{
 #cases-chart-foreign-container{
   width: 100%;
   height: calc(50% - 31px);
+}
+.foreign-select-box{
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  z-index: 99;
+}
+.foreign-select-box .foreign-options-container{
+  background-color: var(--background);
+  color: var(--primary-text);
+  border-radius: 8px;
+  max-height: 0;
+  opacity: 0;
+  width: 100%;
+  transition: all 0.4s;
+  overflow: hidden;
+  order: 1;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+.foreign-selected{
+  background-color: var(--div-box);
+  color: var(--primary-text);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  width: 100%;
+  position: relative;
+  order: 0;
+}
+.foreign-selected::after{
+  content: "";
+  background: url(../images/arrow-down-icon-svg.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 14px;
+  top: 0;
+  right: 4px;
+  transition: all 0.4s;
+}
+.foreign-select-box .foreign-options-container.active{
+  max-height: 100%;
+  opacity: 1;
+}
+.foreign-select-box .foreign-options-container.active + .foreign-selected::after{
+  transform: rotateX(180deg);
+  top: -2px;
+}
+.foreign-select-box .foreign-option{
+  padding: 8px 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.foreign-select-box .foreign-selected{
+  padding: 0 4px 0 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.foreign-select-box .foreign-option:hover{
+  background-color: var(--line);
+}
+.foreign-select-box label{
+  cursor: pointer;
+}
+.foreign-select-box .foreign-option .radio{
+  display: none;
 }
 
 /*Bottom Info*/

@@ -60,7 +60,7 @@ const totalCasesChart = Highcharts.chart('total-cases-chart-container', {
 
   tooltip: {
     shared: true,
-    backgroundColor: 'rgb(50, 59, 75)',
+    backgroundColor: 'rgb(87, 199, 133)',
     borderRadius: 10,
     borderWidth: 0,
     shadow: false,
