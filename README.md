@@ -2,7 +2,7 @@
 
 A data view of the Covid-19 pandemic in Vietnam. Check it [live](https://hulk1999.github.io/CovidDashboard/)!
 
-![](images/DỮ LIỆU COVID-19 TẠI VIỆT NAM.jpg)
+![](images/thumbnail.jpg)
 
 # Contributors
 - [Hưng Nguyễn](https://hulk1999.github.io/Portfolio)
