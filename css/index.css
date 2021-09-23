@@ -149,7 +149,7 @@ html, body{
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
-  width: 33%;
+  width: 50%;
   display: inline-block;
 }
 
@@ -678,4 +678,33 @@ html, body{
   color: white;
   font-size: 11px;
   -webkit-transform: rotate(-90deg);
+}
+
+/*--------------------  VIEW PORT NOTI ----------------------*/
+
+#view-port-notification{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  z-index: 100;
+  display: none;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#view-port-notification p{
+  color: var(--primary-text);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  width: 80%;
+  margin: 20px 0 0 0;
+}
+@media screen and (max-width: 1240px) {
+  #view-port-notification {display: flex;}
 }
