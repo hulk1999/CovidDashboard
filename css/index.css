@@ -1,7 +1,7 @@
 /*Global*/
 
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 html,
 body {
@@ -204,7 +204,7 @@ body {
   margin-bottom: 8px;
 }
 .selected::after {
-  content: "";
+  content: '';
   background: url(../images/arrow-down-icon-svg.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -399,7 +399,7 @@ body {
   order: 0;
 }
 .foreign-selected::after {
-  content: "";
+  content: '';
   background: url(../images/arrow-down-icon-svg.svg);
   background-size: contain;
   background-repeat: no-repeat;

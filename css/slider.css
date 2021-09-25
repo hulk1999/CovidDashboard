@@ -22,7 +22,7 @@
   width: calc(100% - 160px);
 }
 
-#slider-container input[type="range"] {
+#slider-container input[type='range'] {
   -webkit-appearance: none;
   pointer-events: none;
   position: absolute;
@@ -36,11 +36,11 @@
   background: rgba(0, 0, 0, 0);
 }
 
-#slider-container input[type="range"]:last-of-type {
+#slider-container input[type='range']:last-of-type {
   background: rgb(10, 132, 255);
 }
 
-#slider-container input[type="range"]::-webkit-slider-thumb {
+#slider-container input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   pointer-events: all;
   position: relative;
