@@ -1,21 +1,21 @@
 /*----------------- TOOLTIP --------------------*/
 
-.tooltip{
-    font-family: Roboto;
+.tooltip {
+  font-family: Roboto;
 }
 
 .tooltip-name {
-    font-weight: bold;
-    margin-bottom: 4px;
-    text-align: center;
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-align: center;
 }
 
-.tooltip-info-column{
-    display: inline-block;
-    text-align: right;
+.tooltip-info-column {
+  display: inline-block;
+  text-align: right;
 }
 
-.tooltip-info-column:nth-of-type(2){
-    display: inline-block;
-    text-align: left;
+.tooltip-info-column:nth-of-type(2) {
+  display: inline-block;
+  text-align: left;
 }

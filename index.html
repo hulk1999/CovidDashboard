@@ -1,267 +1,346 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.svg" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.svg">
+    <title>DỮ LIỆU COVID-19 TẠI VIỆT NAM</title>
 
-  <title>DỮ LIỆU COVID-19 TẠI VIỆT NAM</title>
-
-  <link rel="stylesheet" type="text/css" href="css/index.css">
-  <link rel="stylesheet" type="text/css" href="css/slider.css">
-  <link rel="stylesheet" type="text/css" href="css/charts.css">
-
-</head>
-<body>
-
-  <div id="main-container">
-    
-    <div id="header-container">
-
-      <a id="header-title">THÔNG TIN VỀ DỊCH BỆNH COVID-19 TẠI VIỆT NAM</a>
-      <p id="header-date">Cập nhật: <span>23/09/2021</span></p>
-      <div id="credit-source-container">
-        <p id="credit">Phát triển bởi Khang Trần và Hưng Nguyễn</p>
-        <img src="images/dash-icon-svg.svg" id="dash">
-        <a href="https://github.com/hulk1999/CovidDashboard" id="source-link"><img src="images/link-circle-icon-svg.svg"><span>Dữ liệu</span></a>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/slider.css" />
+    <link rel="stylesheet" type="text/css" href="css/charts.css" />
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="header-container">
+        <a id="header-title">THÔNG TIN VỀ DỊCH BỆNH COVID-19 TẠI VIỆT NAM</a>
+        <p id="header-date">Cập nhật: <span>23/09/2021</span></p>
+        <div id="credit-source-container">
+          <p id="credit">Phát triển bởi Khang Trần và Hưng Nguyễn</p>
+          <img src="images/dash-icon-svg.svg" id="dash" />
+          <a href="https://github.com/hulk1999/CovidDashboard" id="source-link"
+            ><img src="images/link-circle-icon-svg.svg" /><span
+              >Dữ liệu</span
+            ></a
+          >
+        </div>
       </div>
 
-    </div>
-
-    <div id="body-container">
-      
-      <div id="left-dashboard">
-
-        <div class="dashboard-header">
-          <h1 id="left-dashboard-title">Số ca mắc mới</h1>
-          <div class="filter"> 
-            <div class="select-box">
-              <div class="options-container">
-                <div class="option">
-                  <input type="radio" id="phase-4" name="phase" class="radio"/>
-                  <label for="phase-4">Giai đoạn 4</label>
+      <div id="body-container">
+        <div id="left-dashboard">
+          <div class="dashboard-header">
+            <h1 id="left-dashboard-title">Số ca mắc mới</h1>
+            <div class="filter">
+              <div class="select-box">
+                <div class="options-container">
+                  <div class="option">
+                    <input
+                      type="radio"
+                      id="phase-4"
+                      name="phase"
+                      class="radio"
+                    />
+                    <label for="phase-4">Giai đoạn 4</label>
+                  </div>
+                  <div class="option">
+                    <input
+                      type="radio"
+                      id="phase-3"
+                      name="phase"
+                      class="radio"
+                    />
+                    <label for="phase-3">Giai đoạn 3</label>
+                  </div>
+                  <div class="option">
+                    <input
+                      type="radio"
+                      id="phase-2"
+                      name="phase"
+                      class="radio"
+                    />
+                    <label for="phase-2">Giai đoạn 2</label>
+                  </div>
+                  <div class="option">
+                    <input
+                      type="radio"
+                      id="phase-1"
+                      name="phase"
+                      class="radio"
+                    />
+                    <label for="phase-1">Giai đoạn 1</label>
+                  </div>
+                  <div class="option">
+                    <input
+                      type="radio"
+                      id="phase-all"
+                      name="phase"
+                      class="radio"
+                    />
+                    <label for="phase-all">Tất cả</label>
+                  </div>
                 </div>
-                <div class="option">
-                  <input type="radio" id="phase-3" name="phase" class="radio"/>
-                  <label for="phase-3">Giai đoạn 3</label>
-                </div>
-                <div class="option">
-                  <input type="radio" id="phase-2" name="phase" class="radio"/>
-                  <label for="phase-2">Giai đoạn 2</label>
-                </div>
-                <div class="option">
-                  <input type="radio" id="phase-1" name="phase" class="radio"/>
-                  <label for="phase-1">Giai đoạn 1</label>
-                </div>
-                <div class="option">
-                  <input type="radio" id="phase-all" name="phase" class="radio"/>
-                  <label for="phase-all">Tất cả</label>
-                </div>
+                <div class="selected">Giai đoạn 4</div>
               </div>
-              <div class="selected">Giai đoạn 4</div>
-            </div>
-            <!-- Main Slider -->
-            <div id="main-slider-container">
-              <div id="slider-start">0</div>
-              <div id="slider-container">
-                <input value="0" min="0" max="0" step="1" type="range" id="slider-left"
-                       oninput="handleSliderInput(this, true, false)"/>
-                <input value="0" min="0" max="0" step="1" type="range" id="slider-right"
-                       oninput="handleSliderInput(this, false, false)"/>
+              <!-- Main Slider -->
+              <div id="main-slider-container">
+                <div id="slider-start">0</div>
+                <div id="slider-container">
+                  <input
+                    value="0"
+                    min="0"
+                    max="0"
+                    step="1"
+                    type="range"
+                    id="slider-left"
+                    oninput="handleSliderInput(this, true, false)"
+                  />
+                  <input
+                    value="0"
+                    min="0"
+                    max="0"
+                    step="1"
+                    type="range"
+                    id="slider-right"
+                    oninput="handleSliderInput(this, false, false)"
+                  />
+                </div>
+                <div id="slider-end">0</div>
               </div>
-              <div id="slider-end">0</div>
             </div>
           </div>
-        </div>
 
-        <div id="new-cases-container">
-
-          <div id="new-cases">
-            <div id="new-cases-vietnam-container">
-              <div class="new-cases-title">
-                <div class="title-line"></div>
-                <h2>Việt Nam</h2>
-                <div id="new-cases-explain">
-                  <div class="explain-detail">
-                    <div id="new-cases-bar"></div>
-                    <p class="explain-label">Số ca mắc mới</p>
-                  </div>
-                  <div class="explain-detail">
-                    <div id="new-cases-avg-bar"></div>
-                    <p class="explain-label">Trung bình 7 ngày</p>
+          <div id="new-cases-container">
+            <div id="new-cases">
+              <div id="new-cases-vietnam-container">
+                <div class="new-cases-title">
+                  <div class="title-line"></div>
+                  <h2>Việt Nam</h2>
+                  <div id="new-cases-explain">
+                    <div class="explain-detail">
+                      <div id="new-cases-bar"></div>
+                      <p class="explain-label">Số ca mắc mới</p>
+                    </div>
+                    <div class="explain-detail">
+                      <div id="new-cases-avg-bar"></div>
+                      <p class="explain-label">Trung bình 7 ngày</p>
+                    </div>
                   </div>
                 </div>
+                <div id="cases-chart-main-container"></div>
               </div>
-              <div id="cases-chart-main-container"></div>
+              <div class="vertical-divider"></div>
+              <div id="new-cases-other-container">
+                <div class="new-cases-title">
+                  <div class="title-line"></div>
+                  <h2>Thế giới</h2>
+                </div>
+                <div id="cases-chart-world-container"></div>
+                <div class="new-cases-title">
+                  <div class="title-line"></div>
+                  <div class="foreign-select-box">
+                    <div class="foreign-options-container">
+                      <div
+                        class="foreign-option"
+                        onclick="updateCountry('usa')"
+                      >
+                        <input
+                          type="radio"
+                          name="foreign"
+                          class="radio"
+                          id="usa"
+                        />
+                        <label for="usa">Mỹ</label>
+                      </div>
+                      <div
+                        class="foreign-option"
+                        onclick="updateCountry('china')"
+                      >
+                        <input
+                          type="radio"
+                          name="foreign"
+                          class="radio"
+                          id="china"
+                        />
+                        <label for="china">Trung Quốc</label>
+                      </div>
+                      <div
+                        class="foreign-option"
+                        onclick="updateCountry('india')"
+                      >
+                        <input
+                          type="radio"
+                          name="foreign"
+                          class="radio"
+                          id="india"
+                        />
+                        <label for="india">Ấn Độ</label>
+                      </div>
+                    </div>
+                    <div class="foreign-selected">Mỹ</div>
+                  </div>
+                </div>
+                <div id="cases-chart-foreign-container"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="horizontal-divider"></div>
+
+          <div id="bottom-info-container">
+            <div id="current-live-death-cases-container">
+              <div class="dashboard-header">
+                <h1 id="current-live-death-cases-title">
+                  Số ca đang mắc, đã khỏi và tử vong
+                </h1>
+              </div>
+              <div id="total-cases-chart-container"></div>
+              <div id="current-live-death-cases-explain">
+                <div class="explain-detail">
+                  <div id="current-bar"></div>
+                  <p class="explain-label">Đang mắc</p>
+                </div>
+                <div class="explain-detail">
+                  <div id="live-bar"></div>
+                  <p class="explain-label">Đã khỏi</p>
+                </div>
+                <div class="explain-detail">
+                  <div id="death-bar"></div>
+                  <p class="explain-label">Tử vong</p>
+                </div>
+              </div>
             </div>
             <div class="vertical-divider"></div>
-            <div id="new-cases-other-container">
-              <div class="new-cases-title">
-                <div class="title-line"></div>
-                <h2>Thế giới</h2>
-              </div>
-              <div id="cases-chart-world-container"></div>
-              <div class="new-cases-title">
-                <div class="title-line"></div>
-                <div class="foreign-select-box">
-                  <div class="foreign-options-container">
-                    <div class="foreign-option" onclick="updateCountry('usa')">
-                      <input type="radio" name="foreign" class="radio" id="usa">
-                      <label for="usa">Mỹ</label>
-                    </div>
-                    <div class="foreign-option" onclick="updateCountry('china')">
-                      <input type="radio" name="foreign" class="radio" id="china">
-                      <label for="china">Trung Quốc</label>
-                    </div>
-                    <div class="foreign-option" onclick="updateCountry('india')">
-                      <input type="radio" name="foreign" class="radio" id="india">
-                      <label for="india">Ấn Độ</label>
-                    </div>
+            <div id="vaccin-container">
+              <div class="dashboard-header">
+                <h1 id="vaccin-title">Vaccine</h1>
+                <div class="filter">
+                  <div class="view-option-container">
+                    <input
+                      type="radio"
+                      id="population-view"
+                      name="view-option"
+                      class="view-radio"
+                      checked="checked"
+                      onclick="updateVaccine('people')"
+                    />
+                    <label for="population-view" class="view-radio-label"
+                      >Số người</label
+                    >
                   </div>
-                  <div class="foreign-selected">Mỹ</div>
+                  <div class="view-option-container">
+                    <input
+                      type="radio"
+                      id="percentage-view"
+                      name="view-option"
+                      class="view-radio"
+                      onclick="updateVaccine('percent')"
+                    />
+                    <label for="percentage-view" class="view-radio-label"
+                      >% dân số</label
+                    >
+                  </div>
                 </div>
               </div>
-              <div id="cases-chart-foreign-container"></div>
+              <div id="vaccine-chart-container"></div>
+              <div id="vaccin-explain">
+                <div class="explain-detail">
+                  <div id="vaccin-1-bar"></div>
+                  <p class="explain-label">Tiêm mũi 1</p>
+                </div>
+                <div class="explain-detail">
+                  <div id="vaccin-2-bar"></div>
+                  <p class="explain-label">Tiêm mũi 2</p>
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
 
-        <div class="horizontal-divider"></div>
-
-        <div id="bottom-info-container">
-          
-          <div id="current-live-death-cases-container">
-            <div class="dashboard-header">
-              <h1 id="current-live-death-cases-title">Số ca đang mắc, đã khỏi và tử vong</h1>
-            </div>
-            <div id="total-cases-chart-container"></div>
-            <div id="current-live-death-cases-explain">
-              <div class="explain-detail">
-                <div id="current-bar"></div>
-                <p class="explain-label">Đang mắc</p>
-              </div>
-              <div class="explain-detail">
-                <div id="live-bar"></div>
-                <p class="explain-label">Đã khỏi</p>
-              </div>
-              <div class="explain-detail">
-                <div id="death-bar"></div>
-                <p class="explain-label">Tử vong</p>
-              </div>
-            </div>
+        <div id="right-dashboard">
+          <div class="dashboard-header">
+            <h1 id="right-dashboard-title">Tổng số ca mắc</h1>
+            <p id="total">Tổng: <span id="total-data"></span> ca</p>
           </div>
-          <div class="vertical-divider"></div>
-          <div id="vaccin-container">
-            <div class="dashboard-header">
-              <h1 id="vaccin-title">Vaccin</h1>
-              <div class="filter">
-                <div class="view-option-container">
-                  <input type="radio" id="population-view" name="view-option" class="view-radio" checked="checked" onclick="updateVaccine('people')">
-                  <label for="population-view" class="view-radio-label">Số người</label>
-                </div>
-                <div class="view-option-container">
-                  <input type="radio" id="percentage-view" name="view-option" class="view-radio" onclick="updateVaccine('percent')">
-                  <label for="percentage-view" class="view-radio-label">% dân số</label>
+          <div id="hbar-total-cases-container">
+            <div class="hbar-container">
+              <div class="hbar-title">
+                <div class="hbar-label">Đang mắc</div>
+                <div class="hbar-value">
+                  <span id="hbar-current-cases-value"></span>
                 </div>
               </div>
+              <div class="hbar" id="hbar-current-cases"></div>
             </div>
-            <div id="vaccine-chart-container"></div>
-            <div id="vaccin-explain">
-              <div class="explain-detail">
-              <div id="vaccin-1-bar"></div>
-              <p class="explain-label">Tiêm mũi 1</p>
+            <div class="hbar-container">
+              <div class="hbar-title">
+                <div class="hbar-label">Đã khỏi</div>
+                <div class="hbar-value">
+                  <span id="hbar-live-cases-value"></span>
+                </div>
+              </div>
+              <div class="hbar" id="hbar-live-cases"></div>
             </div>
-            <div class="explain-detail">
-              <div id="vaccin-2-bar"></div>
-              <p class="explain-label">Tiêm mũi 2</p>
-            </div>
+            <div class="hbar-container">
+              <div class="hbar-title">
+                <div class="hbar-label">Tử vong</div>
+                <div class="hbar-value">
+                  <span id="hbar-dead-cases-value"></span>
+                </div>
+              </div>
+              <div class="hbar" id="hbar-dead-cases"></div>
             </div>
           </div>
-
+          <div class="horizontal-divider"></div>
+          <div id="map-chart-outer-container">
+            <div id="map-chart-container"></div>
+            <img src="images/hoang-sa-map-svg.svg" id="hoang-sa" />
+            <div id="truong-sa-container">
+              <img src="images/truong-sa-map-svg.svg" id="truong-sa" />
+            </div>
+            <div id="color-axis-label">ca nhiễm / 10 km<sup>2</sup></div>
+          </div>
         </div>
-
       </div>
-
-      <div id="right-dashboard">
-
-        <div class="dashboard-header">
-          <h1 id="right-dashboard-title">Tổng số ca mắc</h1>
-          <p id="total">Tổng: <span id="total-data"></span> ca</p>
-        </div>
-        <div id="hbar-total-cases-container">
-          <div class="hbar-container">
-            <div class="hbar-title">
-              <div class="hbar-label">Đang mắc</div>
-              <div class="hbar-value"><span id="hbar-current-cases-value"></span></div>
-            </div>
-            <div class="hbar" id="hbar-current-cases"></div>
-          </div>
-          <div class="hbar-container">
-            <div class="hbar-title">
-              <div class="hbar-label">Đã khỏi</div>
-              <div class="hbar-value"><span id="hbar-live-cases-value"></span></div>
-            </div>
-            <div class="hbar" id="hbar-live-cases"></div>
-          </div>
-          <div class="hbar-container">
-            <div class="hbar-title">
-              <div class="hbar-label">Tử vong</div>
-              <div class="hbar-value"><span id="hbar-dead-cases-value"></span></div>
-            </div>
-            <div class="hbar" id="hbar-dead-cases"></div>
-          </div>
-        </div>
-        <div class="horizontal-divider"></div>
-        <div id="map-chart-outer-container">
-          <div id="map-chart-container"></div>
-          <img src="images/hoang-sa-map-svg.svg" id="hoang-sa"/>
-          <div id="truong-sa-container">
-            <img src="images/truong-sa-map-svg.svg" id="truong-sa"/>
-          </div>
-          <div id="color-axis-label">ca nhiễm / 10 km<sup>2</sup></div>
-        </div>
-        
-      </div>
-
     </div>
 
-  </div>
+    <div id="view-port-notification">
+      <p>
+        Cảm ơn bạn đã quan tâm đến dự án <b>Dữ liệu Covid-19 tại Việt Nam</b>.
+      </p>
+      <p>
+        Bạn vui lòng xem trên màn hình desktop lớn hơn để có trải nghiệm tốt
+        nhất hoặc bay acc nhé!!
+      </p>
+    </div>
 
-  <div id="view-port-notification">
-    <p>Cảm ơn bạn đã quan tâm đến dự án <b>Dữ liệu Covid-19 tại Việt Nam</b>.</p>
-    <p>Bạn vui lòng xem trên màn hình desktop lớn hơn để có trải nghiệm tốt nhất nhé</p>
-  </div>
+    <!-- -------------------------------------- JAVASCRIPT ---------------------------------------- -->
 
-  <!-- -------------------------------------- JAVASCRIPT ---------------------------------------- -->
+    <script src="highcharts/highmaps.js"></script>
+    <script src="highcharts/vn-all.js"></script>
 
-  <script src="highcharts/highmaps.js"></script>
-  <script src="highcharts/vn-all.js"></script>
+    <script src="data/processed/cases-data.js"></script>
+    <script src="data/processed/cases-data-world.js"></script>
+    <script src="data/processed/cases-data-usa.js"></script>
+    <script src="data/processed/cases-data-china.js"></script>
+    <script src="data/processed/cases-data-india.js"></script>
+    <script src="data/processed/vaccine-data.js"></script>
+    <script src="data/processed/map-data.js"></script>
 
-  <script src="data/processed/cases-data.js"></script>
-  <script src="data/processed/cases-data-world.js"></script>
-  <script src="data/processed/cases-data-usa.js"></script>
-  <script src="data/processed/cases-data-china.js"></script>
-  <script src="data/processed/cases-data-india.js"></script>
-  <script src="data/processed/vaccine-data.js"></script>
-  <script src="data/processed/map-data.js"></script>
+    <script src="js/utils.js"></script>
 
-  <script src="js/utils.js"></script>
+    <script src="js/cases-chart.js"></script>
+    <script src="js/total-cases-chart.js"></script>
+    <script src="js/vaccine-chart.js"></script>
+    <script src="js/map-chart.js"></script>
+    <script src="js/hbar-chart.js"></script>
 
-  <script src="js/cases-chart.js"></script>
-  <script src="js/total-cases-chart.js"></script>
-  <script src="js/vaccine-chart.js"></script>
-  <script src="js/map-chart.js"></script>
-  <script src="js/hbar-chart.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/slider.js"></script>
 
-  <script src="js/init.js"></script>
-  <script src="js/slider.js"></script>
-
-<!-- -------------------------------------- /JAVASCRIPT ---------------------------------------- -->
-
-</body>
+    <!-- -------------------------------------- /JAVASCRIPT ---------------------------------------- -->
+  </body>
 </html>

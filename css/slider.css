@@ -1,53 +1,54 @@
 /*----------------- SLIDER --------------------*/
 
-#slider-start, #slider-end{
-    display: inline-block;
-    height: 30px;
-    width: 80px;
-    line-height: 30px;
-    overflow: hidden;
-    font-size: 12px;
-    color: white;
+#slider-start,
+#slider-end {
+  display: inline-block;
+  height: 30px;
+  width: 80px;
+  line-height: 30px;
+  overflow: hidden;
+  font-size: 12px;
+  color: white;
 }
 
-#slider-end{
-    text-align: right;
+#slider-end {
+  text-align: right;
 }
 
-#slider-container{
-    display: inline-block;
-    position: relative;
-    height: 30px;
-    width: calc(100% - 160px);
+#slider-container {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  width: calc(100% - 160px);
 }
 
 #slider-container input[type='range'] {
-    -webkit-appearance: none;
-    pointer-events: none;
-    position: absolute;
-    top: 11px;
-    left: 0;
-    height: 6px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border-radius: 10px;
-    background: rgba(0,0,0,0);
+  -webkit-appearance: none;
+  pointer-events: none;
+  position: absolute;
+  top: 11px;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
 }
 
-#slider-container input[type='range']:last-of-type{
-    background: rgb(10, 132, 255);
+#slider-container input[type='range']:last-of-type {
+  background: rgb(10, 132, 255);
 }
 
 #slider-container input[type='range']::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    pointer-events: all;
-    position: relative;
-    width: 18px;
-    height: 18px;
-    border: 3px solid rgb(10, 132, 255);
-    border-radius: 10px;
-    background-color: white;
-    cursor: pointer;
-    z-index: 1;
+  -webkit-appearance: none;
+  pointer-events: all;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgb(10, 132, 255);
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+  z-index: 1;
 }

@@ -1,21 +1,23 @@
 // ============= VACCINE =================
 // https://api.highcharts.com/highcharts/chart
 
-let isPeople = true;
+let isPeople = true
 
 const vaccineChart = Highcharts.chart('vaccine-chart-container', {
-
   chart: {
     backgroundColor: 'black'
   },
 
-  series: [{
-    data: [...vaccineData.partialPeople],
-    color: 'rgb(94, 92, 230)',
-  }, {
-    data: [...vaccineData.fullPeople],
-    color: 'rgb(191, 90, 242)',
-  },],
+  series: [
+    {
+      data: [...vaccineData.partialPeople],
+      color: 'rgb(94, 92, 230)'
+    },
+    {
+      data: [...vaccineData.fullPeople],
+      color: 'rgb(191, 90, 242)'
+    }
+  ],
 
   plotOptions: {
     line: {
@@ -26,12 +28,12 @@ const vaccineChart = Highcharts.chart('vaccine-chart-container', {
     }
   },
 
-  title: {text: ''},
+  title: { text: '' },
   xAxis: {
     type: 'datetime',
     lineWidth: 0,
     tickLength: 0,
-    labels: {style: {color: 'white'}},
+    labels: { style: { color: 'white' } },
     dateTimeLabelFormats: {
       day: '%d/%m',
       week: '%d/%m',
@@ -42,16 +44,16 @@ const vaccineChart = Highcharts.chart('vaccine-chart-container', {
       color: 'rgb(94, 92, 230)',
       dashStyle: 'dash',
       width: 1.5
-    },
+    }
   },
   yAxis: {
-    title: {text: ''},
+    title: { text: '' },
     endOnTick: false,
-    labels: {style: {color: 'white'}},
-    gridLineColor: 'rgb(70, 70, 70)',
+    labels: { style: { color: 'white' } },
+    gridLineColor: 'rgb(70, 70, 70)'
   },
-  legend: {enabled: false},
-  credits: {enabled: false},
+  legend: { enabled: false },
+  credits: { enabled: false },
 
   tooltip: {
     shared: true,
@@ -59,35 +61,39 @@ const vaccineChart = Highcharts.chart('vaccine-chart-container', {
     borderRadius: 10,
     borderWidth: 0,
     shadow: false,
-    style: {color: 'white'},
+    style: { color: 'white' },
     useHTML: true,
-    formatter: function() {
-      let text = '<div class="tooltip">';
-      text += '<div class="tooltip-name">Tính đến<br>';
-      text += `${timestamp2DateStr(this.points[0].x)}</div>`;
-      text += '<div class="tooltip-info-column">Mũi 1:&nbsp;<br>Mũi 2:&nbsp;</div>';
-      text += '<div class="tooltip-info-column">';
+    formatter: function () {
+      let text = '<div class="tooltip">'
+      text += '<div class="tooltip-name">Tính đến<br>'
+      text += `${timestamp2DateStr(this.points[0].x)}</div>`
+      text +=
+        '<div class="tooltip-info-column">Mũi 1:&nbsp;<br>Mũi 2:&nbsp;</div>'
+      text += '<div class="tooltip-info-column">'
       if (isPeople)
-        text += `${addSeparator(this.points[0].y, ' ')}<br>${addSeparator(this.points[1].y, ' ')}</div>`;
+        text += `${addSeparator(this.points[0].y, ' ')}<br>${addSeparator(
+          this.points[1].y,
+          ' '
+        )}</div>`
       else
-        text += `${this.points[0].y.toFixed(2)}%<br>${this.points[1].y.toFixed(2)}%</div>`;
-      text += '</div>';
-      return text;
-    },
+        text += `${this.points[0].y.toFixed(2)}%<br>${this.points[1].y.toFixed(
+          2
+        )}%</div>`
+      text += '</div>'
+      return text
+    }
   }
-
-});
+})
 
 // ------------------------------------------------------------------------------------------------
 
-function updateVaccine(unit){
-  if (unit == 'people'){
-    isPeople = true;
-    vaccineChart.yAxis[0].update({labels: {format: undefined}});
+function updateVaccine(unit) {
+  if (unit == 'people') {
+    isPeople = true
+    vaccineChart.yAxis[0].update({ labels: { format: undefined } })
+  } else if (unit == 'percent') {
+    isPeople = false
+    vaccineChart.yAxis[0].update({ labels: { format: '{value}%' } })
   }
-  else if (unit == 'percent'){
-    isPeople = false;
-    vaccineChart.yAxis[0].update({labels: {format: '{value}%'}});
-  }
-  handleSliderInput(document.getElementById('slider-left'), true, false);
+  handleSliderInput(document.getElementById('slider-left'), true, false)
 }
